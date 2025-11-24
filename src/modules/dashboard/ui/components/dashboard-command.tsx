@@ -5,11 +5,10 @@ import { Dispatch, SetStateAction, useState } from "react";
 
 import {
   CommandInput,
-  CommandItem,
   CommandList,
   CommandGroup,
   CommandEmpty,
-  CommandDialog,
+  CommandResponsiveDialog,
 } from "@/components/ui/command";
 
 interface Props {
@@ -22,7 +21,7 @@ export const DashboardCommand = ({ open, setOpen }: Props) => {
   const [search, setSearch] = useState("");
 
   return (
-    <CommandDialog open={open} onOpenChange={setOpen}>
+    <CommandResponsiveDialog open={open} onOpenChange={setOpen}>
       <CommandInput
         placeholder="Find a meeting or agent..."
         value={search}
@@ -71,6 +70,6 @@ export const DashboardCommand = ({ open, setOpen }: Props) => {
           ))} */}
         </CommandGroup>
       </CommandList>
-    </CommandDialog>
+    </CommandResponsiveDialog>
   );
 };
