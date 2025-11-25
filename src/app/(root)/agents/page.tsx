@@ -11,6 +11,7 @@ import AgentsView, {
   AgentsViewError,
   AgentsViewLoading,
 } from "@/modules/agents/ui/views/agents-view";
+import { AgentsListHeader } from "@/modules/agents/ui/components/agents-list-headers";
 
 const Page = async () => {
   const session = await auth.api.getSession({
@@ -26,6 +27,7 @@ const Page = async () => {
 
   return (
     <>
+      <AgentsListHeader />
       <HydrationBoundary state={dehydrate(queryClient)}>
         <Suspense fallback={<AgentsViewLoading />}>
           <ErrorBoundary fallback={<AgentsViewError />}>
