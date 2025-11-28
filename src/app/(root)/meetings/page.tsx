@@ -9,12 +9,13 @@ import { auth } from "@/lib/auth";
 import { getQueryClient, trpc } from "@/trpc/server";
 
 import { loadSearchParams } from "@/modules/meetings/params";
-import { MeetingsListHeader } from "@/modules/meetings/ui/components/meetings-list-header";
+
 import {
   MeetingsView,
   MeetingsViewError,
   MeetingsViewLoading,
 } from "@/modules/meetings/ui/views/meetings-view";
+import { MeetingsListHeader } from "@/modules/meetings/ui/components/meeting-list-header";
 
 interface Props {
   searchParams: Promise<SearchParams>;
